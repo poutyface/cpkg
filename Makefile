@@ -14,7 +14,7 @@ TEST_HELPER_SRC=$(wildcard test/helpers/*.c)
 TEST_HELPER_OBJ=$(patsubst %.c,%.o,${TEST_HELPER_SRC})
 
 
-all: build/${LIB_NAME}.a $(TESTS)
+all: clean build/${LIB_NAME}.a $(TESTS)
 debug: CFLAGS+=-DDEBUG
 debug: all
 
