@@ -1,4 +1,4 @@
-LIB_NAME=bara
+LIB_NAME=bare
 
 CFLAGS=-g -O3 -Wall -Isrc
 
@@ -37,7 +37,7 @@ ${TESTS}: %: %.c build/${LIB_NAME}.a ${TEST_HELPER_OBJ}
 	$(CC) $(CFLAGS) -Itest -o $@ $< build/${LIB_NAME}.a ${TEST_HELPER_OBJ}
 
 tests: all ${TESTS}
-	./test/bara_test
+	./test/bare_test
 
 memcheck: all ${TESTS}
-	valgrind --leak-check=full --show-reachable=no ./test/bara_test
+	valgrind --leak-check=full --show-reachable=no ./test/bare_test

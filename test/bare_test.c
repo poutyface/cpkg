@@ -2,6 +2,6 @@
 
 int main()
 {
-  bara();
+  bare();
   return 0;
 }
