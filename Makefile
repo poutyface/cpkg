@@ -37,7 +37,7 @@ ${TESTS}: %: %.c build/${LIB_NAME}.a ${TEST_HELPER_OBJ}
 	$(CC) $(CFLAGS) -Itest -o $@ $< build/${LIB_NAME}.a ${TEST_HELPER_OBJ}
 
 tests: all ${TESTS}
-	./test/bare_test
+	sh test/runtests.sh
 
 memcheck: all ${TESTS}
 	valgrind --leak-check=full --show-reachable=no ./test/bare_test
