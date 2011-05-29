@@ -1,6 +1,6 @@
 LIB_NAME=bare
 
-CFLAGS=-g -O3 -Wall -Isrc
+CFLAGS=-g -O3 -Wall -Isrc ${OPTS}
 
 SRC=$(wildcard src/*.c src/**/*.c)
 OBJ=$(patsubst %.c,%.o,${SRC})
