@@ -6,5 +6,5 @@
 void bare()
 {
   Logger_trace();
-  Logger_debug("welcome");
+  Logger_debug("welcome!");
 }
