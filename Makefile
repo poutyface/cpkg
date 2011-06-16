@@ -1,9 +1,9 @@
 LIB_NAME=bare
 STATICLIB_NAME=lib${LIB_NAME}.a
 
-CFLAGS=-g -O3 -Wall -I${LIB_NAME} -I${LIB_NAME}/src ${OPTS}
+CFLAGS=-g -O3 -Wall -I${LIB_NAME} -Isrc ${OPTS}
 
-SRC=$(wildcard ${LIB_NAME}/src/*.c)
+SRC=$(wildcard src/*.c)
 OBJ=$(patsubst %.c,%.o,${SRC})
 
 LIB_OBJ=${OBJ}
@@ -15,8 +15,8 @@ TEST_HELPER_SRC=$(wildcard test/helpers/*.c)
 TEST_HELPER_OBJ=$(patsubst %.c,%.o,${TEST_HELPER_SRC})
 
 
-all: clean ${STATICLIB_NAME} $(TESTS)
-debug: CFLAGS+=-DLOGGER_ERROR
+all: ${STATICLIB_NAME} $(TESTS)
+debug: CFLAGS+=-DLOGGER_DEBUG
 debug: all
 
 ${STATICLIB_NAME}: ${LIB_OBJ}
